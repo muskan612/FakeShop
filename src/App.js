@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
+import Services from './components/Services';
+import Login from './components/Login';
+import ItemPage from './components/ItemPage';
 import './App.css';
 
+const url = 'https://fakestoreapi.com/products';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [items, setItems] = useState([]);
+	const [showNavbar, setShowNavbar] = useState(false);
+
+	const getUsers = async () => {
+		const res = await fetch(url);
+		const items = await res.json();
+		setItems(items);
+	};
+
+	useEffect(() => {
+		getUsers();
+	}, []);
+
+	return (
+		<Router>
+			<div className='app'>
+				<Navbar
+					onClick={() => setShowNavbar(!showNavbar)}
+					onShow={showNavbar}
+				/>
+				<Routes>
+					<Route exact path='/' element={<Home />} />
+					<Route path='/products/*' element={<Products items={items} />} />
+					<Route path='/services' element={<Services />} />
+					<Route path='/login' element={<Login />} />
+					{items.map((item) => {
+						const { id } = item;
+						let path = `/products/${id}`;
+						return (
+							<Route
+								key={id}
+								path={path}
+								element={<ItemPage item={items[id - 1]} />}
+							/>
+						);
+					})}
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;

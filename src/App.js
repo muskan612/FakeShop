@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Login from './components/Login';
 import ItemPage from './components/ItemPage';
 import './App.css';
+import DropDown from './components/DropDown';
 
 const url = 'https://fakestoreapi.com/products';
 
@@ -27,10 +28,7 @@ function App() {
 	return (
 		<Router>
 			<div className='app'>
-				<Navbar
-					onClick={() => setShowNavbar(!showNavbar)}
-					onShow={showNavbar}
-				/>
+				<Navbar />
 				<Routes>
 					<Route exact path='/' element={<Home />} />
 					<Route path='/products/*' element={<Products items={items} />} />

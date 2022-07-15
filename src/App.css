@@ -9,3 +9,7 @@
     height: 100vh;
     background: linear-gradient(to right, black 30%, rgb(41, 41, 41));
 }
+
+.body::-webkit-scrollbar {
+    display: none;
+}

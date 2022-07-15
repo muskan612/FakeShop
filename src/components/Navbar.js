@@ -27,6 +27,7 @@ const Navbar = () => {
 			<div className='navigation-bar'>
 				<FontAwesomeIcon
 					className='bar'
+					style={{ cursor: 'pointer' }}
 					icon={faBars}
 					onClick={() => setShowNavbar(!showNavbar)}
 				/>

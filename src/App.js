@@ -7,7 +7,6 @@ import Services from './components/Services';
 import Login from './components/Login';
 import ItemPage from './components/ItemPage';
 import './App.css';
-import DropDown from './components/DropDown';
 
 const url = 'https://fakestoreapi.com/products';
 

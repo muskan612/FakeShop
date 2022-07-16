@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import DropDown from './DropDown';
-// import icon from './images/icon.jpg'
 
 const Navbar = () => {
 	const [showNavbar, setShowNavbar] = useState(false);

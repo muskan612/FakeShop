@@ -1,4 +1,4 @@
-.container {
+.prod-container {
     width: 90%;
     height: 82%;
     background-color: white;
@@ -18,11 +18,11 @@
 .left img {
     position: relative;
     padding: 15%;
-    border: solid gray 1px;
-    box-shadow: 5px 5px 10px gray;
+    /* border: solid gray 1px; */
+    box-shadow: 5px 5px 12px gray;
 }
 
-.container .right {
+.prod-container .right {
     margin: 10% 12% 10% 0;
     overflow: scroll;
     overflow-x: hidden;
@@ -30,12 +30,12 @@
     /* border: solid black 1px; */
 }
 
-.container .right::-webkit-scrollbar {
+.prod-container .right::-webkit-scrollbar {
     width: 0.2em;
     margin-left: 5px;
 }
 
-.container .right::-webkit-scrollbar-thumb {
+.prod-container .right::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, .1);
     outline: 1px solid slategrey;
 }

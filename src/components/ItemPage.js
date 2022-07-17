@@ -12,14 +12,20 @@ const ItemPage = ({ item }) => {
 		image,
 		rating: { rate, count },
 	} = item;
-	// console.log(item)
 	const handleSubmit = (event) => {
-		// alert(event.value);
-		console.log(event.target);
 		event.preventDefault();
+		if (!Number.isInteger(Number(document.getElementById('quantity').value))) {
+			alert(`Please add quantity.`);
+		} else {
+			alert(
+				`${
+					document.getElementById('quantity').value
+				} item(s) have been added to cart`
+			);
+		}
 	};
 	return (
-		<div className='container'>
+		<div className='prod-container'>
 			<section className='left'>
 				<img src={image} alt={image} />
 			</section>
@@ -34,23 +40,24 @@ const ItemPage = ({ item }) => {
 							top: '3px',
 							border: 'solid #ffd700 1px',
 							borderRadius: '8px',
-							padding: '1px 7px',
+							padding: '2px 7px',
 						}}>
 						{rate}
 					</span>
 					<ReactStars
 						count={5}
-						size='20px'
-						half='true'
+						edit={false}
+						size={18}
+						half={true}
 						value={rate}
-						edit='false'
+						onChange={null}
 					/>
 					<p
 						style={{
 							fontSize: '12px',
 							marginLeft: '5px',
 							position: 'relative',
-							top: '3.3px',
+							top: '4px',
 						}}>
 						&#91;{count} reviews&#93;
 					</p>
@@ -63,7 +70,7 @@ const ItemPage = ({ item }) => {
 				</p>
 				<form className='dropdown' onSubmit={handleSubmit}>
 					<label>
-						<select>
+						<select id='quantity'>
 							<option value='quantity'>Quantity</option>
 							<option value='1'>1</option>
 							<option value='2'>2</option>
@@ -75,10 +82,6 @@ const ItemPage = ({ item }) => {
 					<input type='submit' value='Add to cart' className='submit-btn' />
 				</form>
 			</section>
-			{/* {console.log(id)}
-			{console.log(title)}
-			{console.log(price)}
-			{console.log(description)} */}
 		</div>
 	);
 };

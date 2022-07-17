@@ -1,0 +1,93 @@
+.container {
+    width: 90%;
+    height: 82%;
+    background-color: white;
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border-radius: 10px; */
+}
+
+.left {
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+}
+.left img {
+    position: relative;
+    padding: 15%;
+    border: solid gray 1px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.container .right {
+    margin: 10% 12% 10% 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-right: 5%;
+    /* border: solid black 1px; */
+}
+
+.container .right::-webkit-scrollbar {
+    width: 0.2em;
+    margin-left: 5px;
+}
+
+.container .right::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .1);
+    outline: 1px solid slategrey;
+}
+
+.right .title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.right .price {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(255, 115, 0);
+    padding-top: 40px;
+}
+
+.right .description {
+    padding-top: 30px;
+    font-size: 15px;
+}
+
+.right .description span {
+    font-weight: 645;
+    font-size: 16px;
+}
+
+.right .description p {
+    margin-top: 10px;
+}
+
+.dropdown {
+    margin-top: 30px;
+}
+
+.dropdown select {
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 14x;
+    cursor: pointer;
+}
+
+.submit-btn {
+    padding: 9px;
+    font-size: 14px;
+    font-weight: 540;
+    width: 150px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: rgb(255, 115, 0);
+}

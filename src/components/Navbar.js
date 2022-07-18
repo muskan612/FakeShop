@@ -21,7 +21,6 @@ const Navbar = () => {
 	}, []);
 	return (
 		<>
-			{/* <a href='#'><FontAwesomeIcon style={{width: '100px'}} icon={ faBars } /></a> */}
 			<div className='navigation-bar'>
 				<FontAwesomeIcon
 					className='bar'

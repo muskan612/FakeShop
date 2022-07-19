@@ -21,6 +21,22 @@ header {
     background: linear-gradient(to right, black 30%, rgb(41, 41, 41));
 }
 
+/* .sorting {
+    width: 100%;
+} */
+
+.sorting select {
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    /* border: none; */
+}
+
+.sorting select:focus {
+    outline: none;
+}
+
+
 .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -116,6 +132,13 @@ header {
     }
     .item-card .info {
         font-size: 12px;
+    }
+    .sorting {
+        display: flex;
+        justify-content: center;
+    }
+    .sorting select {
+        margin-left: 0;
     }
 }
 

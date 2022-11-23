@@ -1,10 +1,14 @@
-import React from 'react'
-import './Dummy.css'
+import React from "react";
+import "./Dummy.css";
+import Navbar from "./Navbar";
 
 const Services = () => {
   return (
-    <div className='dummy'>Services</div>
-  )
-}
+    <>
+      <Navbar />
+      <div className="dummy">Services</div>
+    </>
+  );
+};
 
-export default Services
+export default Services;

@@ -21,17 +21,21 @@ const Login = () => {
           <div className="fields">
             <input type="text" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button type="button" className="login-btn">
-              Login
-            </button>
+            <Link to="/">
+              <button type="button" className="login-btn">
+                Login
+              </button>
+            </Link>
           </div>
         </div>
         <div className="signup">
           <div className="header">New Here?</div>
           <div className="para">Create a new account and enjoy shopping!</div>
-          <button type="button" className="signup-btn">
-            Signup
-          </button>
+          <Link to="/signup">
+            <button type="button" className="signup-btn">
+              Signup
+            </button>
+          </Link>
         </div>
       </div>
     </>

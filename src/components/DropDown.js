@@ -8,12 +8,12 @@ const DropDown = () => {
       <Link to="/" className="others nav home">
         Home
       </Link>
-      <Link to="/auth" className="auth nav right">
+      <Link to="/login" className="auth nav right">
         Login/Signup
       </Link>
-      <Link to="/services" className="others nav right">
+      {/* <Link to="/services" className="others nav right">
         Services
-      </Link>
+      </Link> */}
       <Link to="/products" className="others nav right">
         Products
       </Link>

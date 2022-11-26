@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Services from "./components/Services";
-import Auth from "./components/Auth";
+import Login from "./components/Login";
 import ItemPage from "./components/ItemPage";
 import "./App.css";
+import Signup from "./components/Signup";
 
 const url = "https://fakestoreapi.com/products";
 
@@ -31,8 +32,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/products/*" element={<Products items={items} />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/auth" element={<Auth />} />
+          {/* <Route path="/services" element={<Services />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {items.map((item) => {
             const { id } = item;
             let path = `/products/${id}`;

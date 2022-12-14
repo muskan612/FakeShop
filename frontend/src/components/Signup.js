@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
     var hashedPass = hashSync(password, 10)
     console.log(hashedPass)
-    fetch('http://localhost:5000/register', {
+    const response = await (await fetch('http://localhost:5000/register', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -22,11 +22,11 @@ const Signup = () => {
         'email': email,
         'password': hashedPass
       })
-    })
-      .then((response) => {
-        console.log(response.body)
-        // document.getElementById('regForm').reset()
-      })
+    })).json()
+    console.log(response)
+      // .then((response) => {
+      //   // document.getElementById('regForm').reset()
+      // })
   }
   return (
     <>

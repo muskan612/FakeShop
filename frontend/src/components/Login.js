@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo1 from "./images/logo1.png";
 import "./Auth.css";
 import { useState } from "react";
-const {hashSync} = require('bcryptjs')
+// const {hashSync} = require('bcryptjs')
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -11,22 +11,25 @@ const Login = () => {
 
   const HandleLogin = async (e) => {
     e.preventDefault();
-    var hashedPass = hashSync(password,10)
-    console.log(hashedPass)
-    fetch('http://localhost:5000/login',{
+    // var hashedPass = hashSync(password,10)
+    // console.log(hashedPass)
+    const response = await (await fetch('http://localhost:5000/login',{
       method:'POST',
       headers: {
         'Content-type': 'application/json',
+        'Authorization' : `${localStorage.getItem('token')}`,
       },
       body:JSON.stringify({
         'email' : email,
-        'password' : hashedPass
+        'password' : password
       })
-    })
-    .then((response)=>{
-      console.log(response.body)
-      // document.getElementById('regForm').reset()
-    })
+    })).json()
+    console.log(response)
+    localStorage.setItem('token', `Bearer ${response.token}`)
+
+    // .then((response)=>{
+    //   // document.getElementById('regForm').reset()
+    // })
   }
 
   const HandleSignup = () => {

@@ -19,17 +19,22 @@ const login = (req, res)=>{
                     const extract = jwt.verify(jwtToken, process.env.JWT_SECRET)
                     console.log(extract)
                     if(extract.email === doc.email)
-                    res.send(`Token already present: Authorized`)
+                    res.send({
+                        responseText: `Token already present: Authorized`,
+                        token: authHead
+                    })
                 }
                 res.send({
+                    responseText: "Login successfull! Token provided",
                     token: `${getAccessToken(req.body)}`,
                 })
             }
             else
-            res.status(401).send("Unauthorised!")
+            res.status(401).send({responseText: "Unauthorised!"})
         })
-        .catch(()=>{
-            res.status(401).send(`User id does not exist!`)
+        .catch((e)=>{
+            console.log(e);
+            res.status(401).send({responseText: `User id does not exist!`})
         })
     }
 const getAccessToken = ({email})=>{

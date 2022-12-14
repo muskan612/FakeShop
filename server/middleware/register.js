@@ -12,14 +12,20 @@ const register = async (req,res)=>{
             })
             UserInstance.save()
             .then(()=>{
-                res.status(201).send(`User registered successfully!`)
+                res.status(201).send({
+                   responseText: `User registered successfully!`,  
+                })
             })
             .catch(()=>{
-                res.status(502).send(`Bad Gateway: database error`)
+                res.status(502).send({
+                    responseText: `Bad Gateway: database error`
+                })
             })
         }
         else{
-            res.send(`The user already exists. Login instead.`)
+            res.status(403).send({
+                responseText: `The user already exists. Login instead.`
+            })
         }
     
 }

@@ -21,7 +21,7 @@ const login = (req, res)=>{
                     if(extract.email === doc.email)
                     res.send({
                         responseText: `Token already present: Authorized`,
-                        token: authHead
+                        token: jwtToken
                     })
                 }
                 res.send({

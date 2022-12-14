@@ -6,8 +6,8 @@ import { useState } from "react";
 // const {hashSync} = require('bcryptjs')
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const HandleLogin = async (e) => {
     e.preventDefault();
@@ -32,9 +32,6 @@ const Login = () => {
     // })
   }
 
-  const HandleSignup = () => {
-
-  }
   return (
     <>
       <Link to="/">
@@ -50,30 +47,45 @@ const Login = () => {
         <div className="login">
           <div className="header">Login To Your Account</div>
           <div className="fields">
-            <input type="text" id='email'
-              name='email'
+            <input
+              type="text"
+              id="email"
+              name="email"
               value={email}
               required={true}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email" />
-            <input type="password"
-              id='password'
-              name='password'
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
               value={password}
               required={true}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password" />
+              placeholder="Password"
+            />
             <button type="button" className="login-btn" onClick={HandleLogin}>
               Login
             </button>
           </div>
+          <div className="mobile">
+            Do not have an account?{" "}
+            <Link className="span" to="/signup">
+              Signup
+            </Link>
+          </div>
         </div>
-        <div className="signup">
-          <div className="header">New Here?</div>
-          <div className="para">Create a new account and enjoy shopping!</div>
-          <button type="button" className="signup-btn" onClick={HandleSignup}>
-            Signup
-          </button>
+        <div className="mobile-view">
+          <div className="signup">
+            <div className="header">New Here?</div>
+            <div className="para">Create a new account and enjoy shopping!</div>
+            <Link to="/signup">
+              <button type="button" className="signup-btn">
+                Signup
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

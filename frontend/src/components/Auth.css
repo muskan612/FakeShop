@@ -110,3 +110,73 @@ input::placeholder {
 .signup-btn:active {
     transform: scale(0.98);
 }
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1110px) {
+    .signup {
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .header {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    input {
+        width: 310px;
+    }
+    .header {
+        font-size: 28px;
+    }
+    .para {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .authorize {
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile {
+        display: block;
+        font-size: 12px;
+        margin-top: 20px;
+        text-align: center;
+        color: white;
+    }
+    .span {
+        color: white;
+        text-decoration: underline;
+    }
+    .span:active, .span:hover {
+        color: rgb(255, 145, 0);
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
+    .login {
+        margin-right: 0;
+        margin: 5%;
+    }
+
+    .login, .signup {
+        height: auto;
+        margin-top: 100px;
+    }
+    input {
+        width: 300px;
+    }
+    .header {
+        font-size: 25px;
+    }
+}

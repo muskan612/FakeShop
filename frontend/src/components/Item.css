@@ -39,10 +39,14 @@
     display: flex;
     justify-content: space-around;
     padding: 5%;
+    /* width: 500px; */
 }
 .left img {
     position: relative;
     padding: 15%;
+    width: auto;
+    height: auto;
+    /* width: 80%; */
     /* border: solid gray 1px; */
     box-shadow: 5px 5px 12px gray;
 }

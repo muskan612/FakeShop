@@ -31,7 +31,7 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/products/*" element={<Products items={items} />} />
+          <Route path="/products" element={<Products items={items} />} />
           {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

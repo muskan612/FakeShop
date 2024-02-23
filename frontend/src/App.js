@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import ItemPage from "./components/ItemPage";
 import "./App.css";
 import Signup from "./components/Signup";
+import Cart from "./components/Cart";
 
 const url = "https://fakestoreapi.com/products";
 
@@ -35,6 +36,7 @@ function App() {
           {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/cart" element={<Cart />} />
           {items.map((item) => {
             const { id } = item;
             let path = `/products/${id}`;

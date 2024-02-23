@@ -9,7 +9,59 @@
     justify-content: space-between;
     width: 300px;
     float: right;
-    
+}
+
+.profile {
+    display:flex;
+    cursor: pointer;
+}
+
+.profile-item {
+    padding: 7px;
+    word-wrap: break-word;
+}
+
+.email {
+    padding-bottom: 2px;
+    border-bottom: solid 1px rgb(184, 184, 184);
+}
+
+.cart {
+    position: relative;
+    top: 15px;
+    margin-right: 15px;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.cart span {
+    position: relative;
+    top: 12px;
+    font-size: 12px;
+}
+
+.dropdownprofile {
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    color: rgb(134, 134, 134);
+    background-color: white;
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 2;
+    border: solid 0.1px rgb(134, 134, 134);
+}
+
+.profile-pic {
+    width: 45px;
+    border-radius: 5px;
+}
+
+.web-profile { 
+    float: right;
+    margin-left: 5px;
 }
 
 .home {
@@ -26,6 +78,7 @@
     padding: 10px;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .bar {
@@ -59,6 +112,20 @@
         margin-right: 0;
         text-decoration: none;
     }
+    .mobile-profile {
+        position: absolute;
+        display: flex;
+        right: 5px;
+        width: 45px;
+    }
+    .dropdownprofile {
+        top: 55px;
+        right: 10px;
+        width: 150px;
+        font-size: small;
+        padding: 5px;
+        text-align: right;
+    }
     .bar {
         display: block;
         width: 30px;
@@ -67,6 +134,7 @@
         padding: 10px;
         margin-left: 10px;
         margin-bottom: 5px;
+        margin-top: 4px;
     }
     .nav:hover {
         background-color: white;
